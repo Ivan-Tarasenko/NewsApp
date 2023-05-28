@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class TableViewCell: UITableViewCell {
     
@@ -17,17 +18,14 @@ final class TableViewCell: UITableViewCell {
     private let imageNews: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.image = UIImage(named: "iconApp")
-        view.backgroundColor = .red
         return view
     }()
     
     private let titleNews: UILabel = {
         let label = UILabel()
         label.textColor = .darkText
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 18)
         label.numberOfLines = 0
-        label.text = "Дохуя всяких новостей про IT"
         return label
     }()
     
@@ -41,7 +39,26 @@ final class TableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - Private method
+// MARK: - Public methods
+extension TableViewCell {
+    func setTitle(text: String) {
+        titleNews.text = text
+    }
+    
+    func setImage(url: String) {
+        let url = URL(string: url)
+        imageNews.kf.setImage(with: url) { result in
+            switch result {
+            case .failure:
+                self.imageNews.image = UIImage(named: "iconApp")
+            case .success:
+                break
+            }
+        }
+    }
+}
+
+// MARK: - Private methods
 private extension TableViewCell {
     
    func addedConstraints() {
@@ -59,7 +76,7 @@ private extension TableViewCell {
            make.height.equalTo(70)
            make.centerY.equalTo(self)
            make.leading.equalTo(imageNews.snp_trailingMargin).offset(20)
-           make.trailing.equalTo(self).offset(10)
+           make.trailing.equalTo(self).offset(-10)
        }
     }
 }

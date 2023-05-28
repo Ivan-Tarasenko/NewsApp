@@ -5,7 +5,7 @@ target 'NewsApp' do
 
 pod 'Moya', '~> 15.0'
 pod 'ObjectMapper', '~> 3.5'
-pod 'Alamofire'
 pod 'Kingfisher', '~> 7.0'
+pod 'SnapKit', '~> 5.6.0'
 
 end

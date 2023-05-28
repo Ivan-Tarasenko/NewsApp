@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A29F2402A20FC1600EE9009 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29F23F2A20FC1600EE9009 /* TableViewCell.swift */; };
+		1A29F2422A20FC2600EE9009 /* TableViewDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29F2412A20FC2600EE9009 /* TableViewDataSourse.swift */; };
+		1A29F2442A20FC3800EE9009 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A29F2432A20FC3800EE9009 /* TableViewDelegate.swift */; };
 		1ABEFC6029FD8FF100094208 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC5F29FD8FF100094208 /* AppDelegate.swift */; };
 		1ABEFC6229FD8FF100094208 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC6129FD8FF100094208 /* SceneDelegate.swift */; };
 		1ABEFC6429FD8FF100094208 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEFC6329FD8FF100094208 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A29F23F2A20FC1600EE9009 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		1A29F2412A20FC2600EE9009 /* TableViewDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourse.swift; sourceTree = "<group>"; };
+		1A29F2432A20FC3800EE9009 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
 		1ABEFC5C29FD8FF100094208 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABEFC5F29FD8FF100094208 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ABEFC6129FD8FF100094208 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +46,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A29F23A2A20FA1200EE9009 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				1A29F23C2A20FA2C00EE9009 /* Models */,
+				1A29F23B2A20FA2700EE9009 /* Views */,
+				1A36452429FD9CA600E8D292 /* Controllers */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		1A29F23B2A20FA2700EE9009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A29F23F2A20FC1600EE9009 /* TableViewCell.swift */,
+				1A29F2412A20FC2600EE9009 /* TableViewDataSourse.swift */,
+				1A29F2432A20FC3800EE9009 /* TableViewDelegate.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A29F23C2A20FA2C00EE9009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1A36452229FD9C0900E8D292 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +128,8 @@
 		1ABEFC5E29FD8FF100094208 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1A29F23A2A20FA1200EE9009 /* Screen */,
 				1A36452529FD9CB400E8D292 /* Resources */,
-				1A36452429FD9CA600E8D292 /* Controllers */,
 				1A36452329FD9C2B00E8D292 /* Application */,
 				1A36452229FD9C0900E8D292 /* SupportingFiles */,
 			);
@@ -117,7 +150,6 @@
 				380CA1FC5988626A8F7C1328 /* Pods-NewsApp.debug.xcconfig */,
 				2876C9846300F6E80201314B /* Pods-NewsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -129,6 +161,7 @@
 			buildConfigurationList = 1ABEFC7029FD8FF300094208 /* Build configuration list for PBXNativeTarget "NewsApp" */;
 			buildPhases = (
 				63E86C1EBAF355FC9E6E5979 /* [CP] Check Pods Manifest.lock */,
+				1A29F2392A20F9AD00EE9009 /* Swift Lint */,
 				1ABEFC5829FD8FF100094208 /* Sources */,
 				1ABEFC5929FD8FF100094208 /* Frameworks */,
 				1ABEFC5A29FD8FF100094208 /* Resources */,
@@ -188,6 +221,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A29F2392A20F9AD00EE9009 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
 		63E86C1EBAF355FC9E6E5979 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABEFC6429FD8FF100094208 /* ViewController.swift in Sources */,
+				1A29F2402A20FC1600EE9009 /* TableViewCell.swift in Sources */,
+				1A29F2422A20FC2600EE9009 /* TableViewDataSourse.swift in Sources */,
 				1ABEFC6029FD8FF100094208 /* AppDelegate.swift in Sources */,
+				1A29F2442A20FC3800EE9009 /* TableViewDelegate.swift in Sources */,
 				1ABEFC6229FD8FF100094208 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
